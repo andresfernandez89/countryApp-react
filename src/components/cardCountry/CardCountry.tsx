@@ -1,4 +1,10 @@
-export default function CardCountry() {
+
+interface Props {
+  modalState: boolean,
+  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function CardCountry({ modalState, setModalFn }: Props) {
   return (
     <>
       <div className="w-30 rounded bg-slate-950 shadow-xl md:w-40">
@@ -12,6 +18,7 @@ export default function CardCountry() {
         <div className="items-center pb-2 text-center">
           <h2 className="card-title justify-center">Argentina</h2>
           <p className="md:text-xs">South America</p>
+          <button type="submit" onClick={() => setModalFn(!modalState)}> More info </button>
         </div>
       </div>
     </>

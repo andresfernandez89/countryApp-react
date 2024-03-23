@@ -1,11 +1,14 @@
+import { Outlet } from 'react-router-dom';
 import "./App.css";
-import Countries from "./pages/countries";
+import { Navigator } from './components/nav/Navigator';
 
 function App() {
   return (
     <>
-      <header></header>
-      <Countries />
+      <header>
+        <Navigator />
+      </header>
+      <Outlet />
       <footer></footer>
     </>
   );
