@@ -1,14 +1,10 @@
 import "./App.css";
 import Countries from "./pages/countries";
 
-function App() {
-  return (
-    <>
-      <header></header>
-      <Countries />
-      <footer></footer>
-    </>
-  );
-}
+const App = () => (
+  <>
+    <Countries />
+  </>
+);
 
 export default App;

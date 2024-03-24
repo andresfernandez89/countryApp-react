@@ -1,9 +1,11 @@
 import ContainerCountries from "../components/containerCountries/ContainerCountries";
 
-export default function Countries() {
+const Countries = () => {
   return (
     <>
       <ContainerCountries />
     </>
   );
-}
+};
+
+export default Countries;
