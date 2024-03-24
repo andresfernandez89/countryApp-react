@@ -3,24 +3,39 @@ interface Props {
   modalState: boolean,
   setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
 }
+interface ICountryName {
+  common: string;
+}
+interface ICountryFlag {
+  svg: string;
+  alt: string;
+}
 
-export default function CardCountry({ modalState, setModalFn }: Props) {
+interface ICountry {
+  name: ICountryName;
+  flag: ICountryFlag;
+  region: string;
+}
+const CardCountry = ({ name, flag, region }: ICountry, { modalState, setModalFn }: Props) => {
   return (
     <>
       <div className="w-30 rounded bg-slate-950 shadow-xl md:w-40">
-        <figure className="p-1.5">
+        <figure className="px-1.5 py-[9px]">
           <img
-            src="https://flagcdn.com/br.svg"
-            alt="Shoes"
-            className="rounded-md"
+            title={`${name.common} flag`}
+            src={flag.svg}
+            alt={flag.alt}
+            className="w-100 mx-auto aspect-[3/2] h-24 rounded-md object-cover"
           />
         </figure>
         <div className="items-center pb-2 text-center">
-          <h2 className="card-title justify-center">Argentina</h2>
-          <p className="md:text-xs">South America</p>
+          <h2 className="card-title justify-center">{name.common}</h2>
+          <p className="md:text-xs">{region}</p>
           <button type="submit" className='rounded-full bg-cyan-900 h-8 w-24' onClick={() => setModalFn(!modalState)}> More info </button>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default CardCountry;
