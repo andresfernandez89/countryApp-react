@@ -1,8 +1,4 @@
 
-interface Props {
-  modalState: boolean,
-  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
-}
 interface ICountryName {
   common: string;
 }
@@ -15,8 +11,10 @@ interface ICountry {
   name: ICountryName;
   flag: ICountryFlag;
   region: string;
+  modalState: boolean,
+  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const CardCountry = ({ name, flag, region }: ICountry, { modalState, setModalFn }: Props) => {
+const CardCountry = ({ name, flag, region, modalState, setModalFn }: ICountry) => {
   return (
     <>
       <div className="w-30 rounded bg-slate-950 shadow-xl md:w-40">
