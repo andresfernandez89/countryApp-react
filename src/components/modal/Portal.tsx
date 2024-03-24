@@ -1,17 +1,16 @@
 import { createPortal } from 'react-dom';
-import { CountryModal } from './CountryModal';
 import { Modal } from './Modal';
 
 interface Props {
   modalState: boolean,
-  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
+  children: JSX.Element[] | JSX.Element;
 }
 
-export const Portal = ({ modalState, setModalFn }: Props) => {
+export const Portal = ({ modalState, children }: Props) => {
   const modal: HTMLElement = document.getElementById("modal") as HTMLElement;
 
   return createPortal(
-    modalState && <Modal ><CountryModal modalState={modalState} setModalFn={setModalFn} /></Modal>,
+    modalState && <Modal >{children}</Modal>,
     modal
   );
 };
