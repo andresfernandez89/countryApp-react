@@ -18,7 +18,7 @@ export default function CardCountry({ modalState, setModalFn }: Props) {
         <div className="items-center pb-2 text-center">
           <h2 className="card-title justify-center">Argentina</h2>
           <p className="md:text-xs">South America</p>
-          <button type="submit" onClick={() => setModalFn(!modalState)}> More info </button>
+          <button type="submit" className='rounded-full bg-cyan-900 h-8 w-24' onClick={() => setModalFn(!modalState)}> More info </button>
         </div>
       </div>
     </>

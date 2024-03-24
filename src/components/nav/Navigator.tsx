@@ -8,7 +8,7 @@ interface NavStyle {
 
 const activeStyle = (data: NavStyle) => {
   return {
-    color: data.isActive ? '#dc2626' : '#fdba74'
+    color: data.isActive ? '#dc2626' : '#fdba74',
   };
 };
 
@@ -17,13 +17,13 @@ export const Navigator = () => {
     <div>
       <ul className='flex justify-between'>
         <li >
-          <NavLink to="/" style={activeStyle} className='h-12 w-40 flex justify-center items-center cursor-pointer'>Home</NavLink>
+          <NavLink to="/" style={activeStyle} className='btn btn-wide mb-4'>Home</NavLink>
         </li>
         <li >
-          <NavLink to="/countries" style={activeStyle} className='h-12 w-40 flex justify-center items-center cursor-pointer'>Countries</NavLink>
+          <NavLink to="/countries" style={activeStyle} className='btn btn-wide mb-4'>Countries</NavLink>
         </li>
         <li >
-          <NavLink to="/users" style={activeStyle} className='h-12 w-40 flex justify-center items-center cursor-pointer'>Users</NavLink>
+          <NavLink to="/users" style={activeStyle} className='btn btn-wide mb-4'>Users</NavLink>
         </li>
       </ul>
     </div>
