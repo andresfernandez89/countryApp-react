@@ -1,10 +1,17 @@
+import { Outlet } from 'react-router-dom';
 import "./App.css";
-import Countries from "./pages/countries";
+import { Navigator } from './components/nav/Navigator';
 
-const App = () => (
-  <>
-    <Countries />
-  </>
-);
+function App() {
+  return (
+    <>
+      <header>
+        <Navigator />
+      </header>
+      <Outlet />
+      <footer></footer>
+    </>
+  );
+}
 
 export default App;

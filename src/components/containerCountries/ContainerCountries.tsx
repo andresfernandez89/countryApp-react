@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import UseGetAllCountries from "../../hooks/UseGetAllCountries";
 import CardCountry from "../cardCountry/CardCountry";
-
+interface Props {
+  modalState: boolean,
+  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
+}
 interface ICountryName {
   common: string;
 }
@@ -17,7 +20,7 @@ interface ICountry {
   region: string;
 }
 
-const ContainerCountries = () => {
+const ContainerCountries = ({ modalState, setModalFn }: Props) => {
   const [countries, setCountries] = useState<ICountry[]>();
   useEffect(() => {
     async function dataFetched() {
@@ -35,6 +38,8 @@ const ContainerCountries = () => {
             name={{ common: country.name.common }}
             region={country.region}
             flag={{ svg: country.flags.svg, alt: country.flags.alt }}
+            modalState={modalState}
+            setModalFn={setModalFn}
           />
         ))
       ) : (

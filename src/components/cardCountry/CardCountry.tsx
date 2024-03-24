@@ -1,3 +1,8 @@
+
+interface Props {
+  modalState: boolean,
+  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
+}
 interface ICountryName {
   common: string;
 }
@@ -11,7 +16,7 @@ interface ICountry {
   flag: ICountryFlag;
   region: string;
 }
-const CardCountry = ({ name, flag, region }: ICountry) => {
+const CardCountry = ({ name, flag, region }: ICountry, { modalState, setModalFn }: Props) => {
   return (
     <>
       <div className="w-30 rounded bg-slate-950 shadow-xl md:w-40">
@@ -26,6 +31,7 @@ const CardCountry = ({ name, flag, region }: ICountry) => {
         <div className="items-center pb-2 text-center">
           <h2 className="card-title justify-center">{name.common}</h2>
           <p className="md:text-xs">{region}</p>
+          <button type="submit" className='rounded-full bg-cyan-900 h-8 w-24' onClick={() => setModalFn(!modalState)}> More info </button>
         </div>
       </div>
     </>
