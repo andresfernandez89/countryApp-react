@@ -10,7 +10,9 @@ export const Home = () => {
         luchan por el desarrollo. Algunos disfrutan de una paz duradera,
         mientras que otros enfrentan conflictos y agitación. La diversidad de
         idiomas, religiones, tradiciones y formas de vida es asombrosa. En lugar
-        de intentar un resumen superficial, es mejor explorar paí
+        de intentar un resumen superficial, es mejor explorar paííses
+        específicos o regiones que te interesen. Cada nación tiene una historia
+        que contar, y vale la pena dedicar tiempo a escucharla.
       </section>
       <img src={WorldSvg} />
     </div>
