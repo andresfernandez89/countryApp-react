@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
-import { ICardTeamProps, IMember } from '../../interfaces/CountriesInterfaces';
+import { useEffect } from "react";
+import { ICardTeamProps, IMember } from "../../interfaces/CountriesInterfaces";
 
-const CardTeam = ({ member, modalState, setModalFn, setModalDataFn, team }: ICardTeamProps) => {
-
+const CardTeam = ({
+  member,
+  modalState,
+  setModalFn,
+  setModalDataFn,
+  team,
+}: ICardTeamProps) => {
   const handleSelectMember = (id: number) => {
-    const memberFinded = team.find(memb => memb.memberID === id) as IMember;
+    const memberFinded = team.find((memb) => memb.memberID === id) as IMember;
     setModalDataFn(memberFinded);
     setModalFn(!modalState);
   };
@@ -14,12 +19,12 @@ const CardTeam = ({ member, modalState, setModalFn, setModalDataFn, team }: ICar
   }, [member.fullName]);
 
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl md:card-side">
       <figure>
         <img
           src={member.photo}
           alt="member profile photo"
-          className="aspect-[5/7] h-[280px] w-[200px]"
+          className="aspect-[5/7] h-[200px] w-[200px] rounded md:h-[280px]"
         />
       </figure>
       <div className="card-body items-center">
