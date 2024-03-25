@@ -36,7 +36,7 @@ const CardCountry = ({
           <p className="md:text-xs">{region}</p>
           <button
             type="submit"
-            className="h-8 w-24 rounded-full bg-cyan-900"
+            className="w-25 btn mt-1.5 h-8 bg-cyan-900"
             onClick={() => setModalFn(!modalState)}
           >
             More info
