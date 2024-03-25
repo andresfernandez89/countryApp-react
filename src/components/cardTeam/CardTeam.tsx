@@ -1,17 +1,18 @@
-interface IMember {
-  fullName: string;
-  photo: string;
-  profession: string;
-  country: string;
-  city: string;
-}
-interface ICardTeamProps {
-  member: IMember;
-  modalState: boolean;
-  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { useEffect } from 'react';
+import { ICardTeamProps, IMember } from '../../interfaces/CountriesInterfaces';
 
-const CardTeam = ({ member, modalState, setModalFn }: ICardTeamProps) => {
+const CardTeam = ({ member, modalState, setModalFn, setModalDataFn, team }: ICardTeamProps) => {
+
+  const handleSelectMember = (id: number) => {
+    const memberFinded = team.find(memb => memb.memberID === id) as IMember;
+    setModalDataFn(memberFinded);
+    setModalFn(!modalState);
+  };
+
+  useEffect(() => {
+    setModalDataFn(member);
+  }, [member.fullName]);
+
   return (
     <div className="card card-side bg-base-100 shadow-xl">
       <figure>
@@ -32,7 +33,7 @@ const CardTeam = ({ member, modalState, setModalFn }: ICardTeamProps) => {
         <div className="card-actions mt-11 justify-center">
           <button
             className="btn bg-cyan-900 opacity-100"
-            onClick={() => setModalFn(!modalState)}
+            onClick={() => handleSelectMember(member.memberID)}
           >
             More info
           </button>
