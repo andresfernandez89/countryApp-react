@@ -1,7 +1,7 @@
 import WorldSvg from "../assets/globe-world.svg";
 export const Home = () => {
   return (
-    <div className="mt-20 grid rounded bg-neutral p-2 md:grid-cols-2 md:p-5">
+    <div className="grid rounded bg-neutral p-2 md:grid-cols-2 md:p-5">
       <section className="order-last mt-[45px] bg-base-100 pb-[25px] pl-[23px] pr-[25px] pt-[30px] md:order-none">
         La Tierra alberga 195 países soberanos, cada uno con su propia historia,
         cultura, geografía y desafíos únicos. Desde microestados como Mónaco

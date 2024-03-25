@@ -1,11 +1,11 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import { Navigator } from './components/nav/Navigator';
+import { Navigator } from "./components/nav/Navigator";
 
 function App() {
   return (
     <>
-      <header>
+      <header className="mb-20">
         <Navigator />
       </header>
       <Outlet />
