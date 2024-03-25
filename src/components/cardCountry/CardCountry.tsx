@@ -1,25 +1,66 @@
-interface ICountryName {
-  common: string;
-}
-interface ICountryFlag {
-  svg: string;
-  alt: string;
-}
+import { useEffect, useState } from 'react';
+import { UsegetCountryByCode } from '../../hooks/UseGetAllCountries';
+import { ICountryCard, ICountryData } from '../../interfaces/CountriesInterfaces';
 
-interface ICountry {
-  name: ICountryName;
-  flag: ICountryFlag;
-  region: string;
-  modalState: boolean;
-  setModalFn: React.Dispatch<React.SetStateAction<boolean>>;
-}
+
+
 const CardCountry = ({
+  code,
   name,
   flag,
   region,
   modalState,
   setModalFn,
-}: ICountry) => {
+  setModalDataFn
+}: ICountryCard) => {
+  const [country, setCountry] = useState<ICountryData>({
+    code: '',
+    svg: '',
+    languages: [''],
+    googleMaps: '',
+    name: {
+      common: ''
+    },
+    originalName: '',
+    region: '',
+    population: 0,
+  });
+
+
+  const handleSelectCountry = () => {
+    setModalFn(!modalState);
+    setModalDataFn(country);
+  };
+
+  const handleFecth = async (code: string) => {
+    try {
+      const data = await UsegetCountryByCode(code);
+      console.log(data[0]);
+
+      await setCountry({
+        code: data[0].cca2,
+        svg: data[0].flags.svg,
+        languages: [''],
+        googleMaps: data[0].maps.googleMaps,
+        name: {
+          common: data[0].name.common
+        },
+        originalName: data[0].name.official,
+        region: data[0].region,
+        population: data[0].population,
+      });
+
+    } catch (error) {
+      console.error('Country fetch error: ' + error);
+
+    }
+  };
+
+  useEffect(() => {
+    handleFecth(code);
+  }, [code]);
+
+
   return (
     <>
       <div className="w-30 rounded bg-base-100 shadow-xl md:w-40">
@@ -37,7 +78,7 @@ const CardCountry = ({
           <button
             type="submit"
             className="w-25 btn mt-1.5 h-8 bg-cyan-900"
-            onClick={() => setModalFn(!modalState)}
+            onClick={() => handleSelectCountry()}
           >
             More info
           </button>
