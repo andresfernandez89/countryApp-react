@@ -1,8 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
-import App from '../App';
-import Countries from '../pages/Countries';
-import { Home } from '../pages/Home';
-import { Users } from '../pages/Users';
+import { createBrowserRouter } from "react-router-dom";
+import App from "../App";
+import Countries from "../pages/Countries";
+import { Home } from "../pages/Home";
+import { Team } from "../pages/Team";
 
 export const router = createBrowserRouter([
   {
@@ -11,20 +11,18 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/countries",
         element: <Countries />,
-        children: [
-        ]
+        children: [],
       },
       {
-        path: "/users",
-        element: <Users />,
-        children: [
-        ]
-      }
-    ]
+        path: "/team",
+        element: <Team />,
+        children: [],
+      },
+    ],
   },
 ]);

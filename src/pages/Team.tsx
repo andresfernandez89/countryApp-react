@@ -3,7 +3,7 @@ import { Portal } from "../components/modal/Portal";
 import { UserModal } from "../components/modal/UserModal";
 import ContainerTeam from "../components/containerTeam/ContainerTeam";
 
-export const Users = () => {
+export const Team = () => {
   const [modal, setModal] = useState<boolean>(false);
 
   return (
