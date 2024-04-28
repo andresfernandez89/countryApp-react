@@ -36,8 +36,9 @@ Start the server
   npm run dev
 ```
 
-## 🔗 Links
+## Authors
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andresfernandez89/)
+- [@andresfernandez89](https://github.com/andresfernandez89)
+- [@nico-slk](https://github.com/nico-slk)
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolas-selicki-web-fullstack/)
+
