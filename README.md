@@ -1,20 +1,14 @@
-
 # COUNTRY APP
 
 This project is a Web Site about information countries.
-
 
 ## Demo
 
 https://countryapp-react.pages.dev/
 
-
 ## Tech Stack
 
 React, TypeScript, Tailwind, DaisyUI.
-
-
-
 
 ## Run Locally
 
@@ -27,7 +21,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd countryApp-react
 ```
 
 Install dependencies
@@ -42,11 +36,8 @@ Start the server
   npm run dev
 ```
 
-
 ## 🔗 Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andresfernandez89/)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolas-selicki-web-fullstack/)
-
-
